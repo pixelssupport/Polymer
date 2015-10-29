@@ -1,0 +1,101 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<!--
+`t-section-header` is a dropdown to select an item from a list of dropdown. The default text if you don't pass any level is "Select value from items"
+
+or you can pass the default in label
+
+Example:
+
+    <t-section-header label="Select one">
+        </t-section-header>
+-->
+<dom-module id="t-info">
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600' rel='stylesheet' type='text/css'> 
+    <style is="custom-style">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+			text-align:justify;
+        }
+
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            padding-top: 0px;
+            margin-top: 0px;
+        }
+
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            padding-top: 10px;
+            margin-top: 0px;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        img, .img-responsive {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .img-rounded {
+            border-radius: 6px;
+        }
+
+        .images {
+            width: 80px;
+            text-align: center;
+            height: 80px !important;
+        }
+    </style>
+    <template>
+  <div style="width:980px; height:auto; margin:0 auto 0 auto; font-family:o">  
+  <div style="float:left;"> 
+  <img class="img-responsive image" src="{{imgurl}}" alt="" title="" border="0" />
+  </div>
+  <div style="float:left; width:220px; height:300px; padding:0px 20px 20px 10px;">
+  <h1>{{label}}</h1>
+  <p>{{secondaryLabel}}</p>
+  </div>
+  </div>
+    </template>
+</dom-module>
+<script>
+    Polymer({
+        is: 't-info',
+
+        properties: {
+
+            /*Change the content of the section
+             */
+            label: {
+                type: String,
+                value: 'New Section',
+                reflectToAttribute: true
+            },
+
+            secondaryLabel: {
+                type: String,
+                value: '',
+                reflectToAttribute: true
+            },
+			
+			imgurl: {
+                type: String,
+                value: '',
+                reflectToAttribute: true
+            }
+
+        }
+
+    });
+</script>
